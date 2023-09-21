@@ -1,7 +1,6 @@
 import numpy as np
 import cv2
 from constants import rgb_camera_params as prgb
-
 def project(point3d,tr_matrix):
     camera_coords_pt3d = np.dot(tr_matrix,point3d.T).T
     camera_coords_pt2d = np.dot(prgb.camera_matrix,camera_coords_pt3d[:-1])
